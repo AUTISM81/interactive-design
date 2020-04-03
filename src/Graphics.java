@@ -92,16 +92,15 @@ public class Graphics extends Canvas implements Runnable {
            each timestep.
         */
 
-        x += v;
+        x += 2*v;
         y += v;
-        if (x >= width-square2.getWidth()) {
+        if (x >= width-square2.getWidth() && y >= height-square2.getHeight()) {
             v *= -1;
         }
-        if (x == 0 || y == 0){
+        if (x == 0 && y == 0){
             v *= -1;
         }
 
-        int y = (int)(square2.getHeight()+v);
 
         for (int i = 0 ; i < square2.getHeight() ; i++) {
             for (int j = 0 ; j < square2.getWidth() ; j++) {
